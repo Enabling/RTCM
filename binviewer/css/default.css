@@ -1,0 +1,69 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. 
+ */
+#map {
+    height: 75%;
+}
+
+#settings {
+    padding: 1em 2em 0 2em;
+}
+
+#refresh {
+    background-color: rgb(136, 103, 175);
+    color: rgb(255, 255, 255);
+}
+
+#scaleErrorMsg {
+    color: black;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(92,45,145) !important;
+}
+
+p {
+    color: white;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+/* Slider */
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    background: rgb(136, 103, 175);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}

@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>EnCo - Bin visualizer</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.ico"/>
+</head>
+<body>
+<div id="map"></div>
+<div id="settings" class="ui grid">
+    <div class="center aligned three wide column">
+        <h3>Update (every 30s)</h3>
+        <p>Last refresh: <span id="lastRefresh">...</span></p>
+        <p>Last bin update: <span id="lastBinUpdate">...</span></p>
+        <button id="refresh" class="ui labeled icon button">
+            <i class="refresh icon"></i>
+            Manual refresh
+        </button>
+    </div>
+    <div class="center aligned five wide column">
+        <h3>Kara URL</h3>
+        <div class="ui fluid form">
+            <div class="field">
+                <input id="binUrlField" type="url" placeholder="Please visit https://kara.rest to create a bin">
+                <div id="errorLabel" class="ui pointing red basic label" style="display: none">
+                    Invalid url, should be: https://kara.rest/bin/{uuid}
+                </div>
+            </div>
+        </div>
+        <h3>Opacity</h3>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="80" class="slider" id="opacityRange">
+        </div>
+        <p><span id="opacityValue">80</span>%</p>
+    </div>
+    <div class="center aligned eight wide column">
+        <h3>Heatmap colors</h3>
+        <div id="scaleError" class="ui mini negative message" style="display: none">
+            <div class="header">
+                Please recheck the provided values
+            </div>
+            <p id="scaleErrorMsg"></p>
+        </div>
+        <div class="ui one column grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui fluid input">
+                        <input id="colorInput" type="text"
+                               value="#fff7fb, #deebf7, #c6dbef, #9ecae1, #6baed6, #4292c6, #2171b5, #08519c, #08306b">
+                    </div>
+                    <br>
+                    <div class="ui fluid input">
+                        <input id="scaleInput" type="text"
+                               value="100, 500, 1000, 4000, 8000, 16000, 22000, 35000, 49000">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" id="scaleLabels">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="UTF-8" src="js/libs/wellknown.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/libs/reproject.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/libs/epsg.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/libs/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/libs/semantic.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/libs/moment.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/main.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initAll">
+</script>
+</body>
+</html>
