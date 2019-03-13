@@ -207,7 +207,7 @@ function redrawMap() {
             if (jsonResponse[0] === undefined) {
                 return;
             }
-            var newData = JSON.parse(jsonResponse[0].body);
+            var newData = JSON.parse(jsonResponse[0].body).data;
             map.data.forEach(function (feature) {
                 // If you want, check here for some constraints.
                 map.data.remove(feature);
